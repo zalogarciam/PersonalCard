@@ -30,10 +30,14 @@
     max-width: 400px;
     display: flex;
     flex-direction:  column;
-    border: 0.125rem solid var(--primary-highlight-color);
+    border: 0.125rem solid var(--primary-text-color);
     border-radius: 1rem;
     overflow: hidden;
     margin: auto;
+}
+
+.card:hover{
+    border: 0.125rem solid var(--primary-highlight-color);
 }
 
 .menu{
@@ -75,4 +79,26 @@
     margin: 0;
     font-size: 1rem;
     text-align: center;
+}
+
+.card__text::before{
+    content: '🖥️';
+}
+
+.card__text::after{
+    content: '🖥️';
+}
+
+.card__footer{
+    background-color: var(--primary-shadow-color);
+    padding: 1rem;
+}
+
+.menu{
+    display: flex;
+    list-style: none;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
 }
