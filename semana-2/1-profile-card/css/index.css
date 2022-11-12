@@ -1,7 +1,7 @@
 :root {
     --primary-theme-color: #20232a;
     --primary-shadow-color: #20232abf;
-    --secondary-shadow-color: #282c34;
+    --secondary-shadow-color: #282c34bf;
     --primary-text-color: #fff;
     --primary-highlight-color: #61dafb;
     --primary-font-family: monospace;
@@ -14,7 +14,8 @@
 }
 
 .hero{
-    background-image: url(https://i.postimg.cc/7PJV8Dp8/react-01-01-wpo.webp);
+    /* background-image: url(https://i.postimg.cc/7PJV8Dp8/react-01-01-wpo.webp); */
+    background-image: url('/img/background.png');
     background-position: center;
     background-size: cover;
     min-height: 100vh;
@@ -51,4 +52,27 @@
     width: min(100%, 256px);
     /* height: min(100%, 256px); */
     object-fit: cover;
+}
+
+.card__body{
+    background-color: var(--secondary-shadow-color);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.card__title {
+    text-align: center;
+    margin: 0;
+    font-size: 1.5rem;
+}
+.card__subtitle {
+    margin: 0;
+    text-align: center;
+    font-size: 1rem;
+}
+.card__text {
+    margin: 0;
+    font-size: 1rem;
+    text-align: center;
 }
