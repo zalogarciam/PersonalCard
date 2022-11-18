@@ -4,4 +4,5 @@
     left: 0;
     background-color: var(--primary-theme-color);
     width: 100%;
+    box-shadow: 0 0 0.125rem 0.125rem var(--primary-shadow-color);
   }
