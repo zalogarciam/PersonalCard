@@ -3,6 +3,7 @@
 @import './modules/nav.css';
 @import './modules/layout.css';
 @import './modules/list.css';
+@import './modules/utils.css';
 
 .body {
   background-color: var(--primary-theme-color);
