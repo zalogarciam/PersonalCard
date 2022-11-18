@@ -2,5 +2,17 @@
     padding-left: var(--padding-container);
     padding-right: var(--padding-container);
     max-width: var(--max-width-container);
-    margin: auto
+    margin: auto;
+    /* display: flex;
+    align-items: center;
+    justify-content:space-evenly */
+}
+
+.f-elements{
+    display: flex;
+}
+
+.f-elements--header{
+    align-items: center;
+    justify-content: space-between;
 }

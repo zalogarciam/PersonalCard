@@ -1,4 +1,8 @@
 .nav {
     padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 1rem;    
+}
+
+.nav__logo{
+    border-radius: 50%;
 }
