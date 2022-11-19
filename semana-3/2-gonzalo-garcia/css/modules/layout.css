@@ -19,6 +19,10 @@
     justify-content: center;
   }
 
+  .f-elements--responsive {
+    flex-direction: column;
+  }
+  
   .section {
     padding-top: var(--padding-section);
     padding-bottom: var(--padding-section);
@@ -30,4 +34,10 @@
     background-image: url('../../assets/img/background.png');
     background-position: center;
     background-size: cover;
+  }
+
+  @media (min-width: 768px) {
+    .f-elements--responsive {
+      flex-direction: row;
+    }
   }
