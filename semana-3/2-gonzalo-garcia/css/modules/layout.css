@@ -18,3 +18,16 @@
     align-items: center;
     justify-content: center;
   }
+
+  .section {
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+  }
+
+  .section--profile{
+    min-height: 100vh;
+    box-sizing: border-box;
+    background-image: url('../../assets/img/background.png');
+    background-position: center;
+    background-size: cover;
+  }
