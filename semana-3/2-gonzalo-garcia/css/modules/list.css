@@ -43,6 +43,10 @@
 }
 
 @media (min-width: 768px) {
-    
-    
+    .list--header 
+    {
+        position: static;
+        width: auto;
+        background-color: transparent;
+    }
 }

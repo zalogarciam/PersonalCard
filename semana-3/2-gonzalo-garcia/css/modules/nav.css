@@ -1,4 +1,4 @@
-nav {
+.nav {
     position: relative;
     --translate-list-header: 100%;
     --scale-menu: 1;
@@ -6,7 +6,7 @@ nav {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
   }
-  
+
   .nav:target {
     --translate-list-header: 0;
     --scale-menu: 0;
@@ -34,4 +34,14 @@ nav {
   
   .nav__icon--close {
     transform: scale(var(--scale-close));
+  }
+
+  @media (min-width: 768px) {
+    .nav {
+        --translate-list-header: 0;
+        --scale-menu: 0;
+      }
+      .nav:target {
+        --scale-close: 0;
+      }    
   }
