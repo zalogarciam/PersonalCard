@@ -7,10 +7,29 @@
 
 .hero__name {
     font-size: 4rem;
+    text-decoration: none;
+}
+
+.hero__letter{
+    position: relative;
+}
+
+.hero__letter::after{
+    position: absolute;
+    content: var(--letter);
+    left: 0;
+    top: 100%;
+    filter: blur(0.0625rem);
+    transform: rotateX(137.5deg)
 }
 
 .hero__letter::before{
     content: var(--letter);
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: blur(0.25rem);
+    transform: scale(1.125);
 }
 
 .hero__letter:nth-child(1) {
