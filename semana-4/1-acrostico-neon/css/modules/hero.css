@@ -9,6 +9,10 @@
     font-size: 4rem;
 }
 
+.hero__letter::before{
+    content: var(--letter);
+}
+
 .hero__letter:nth-child(1) {
     color: red;
 }
