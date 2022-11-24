@@ -1,5 +1,6 @@
 @import url(./modules/hero.css);
 @import url(./modules/variables.css);
+@import url(./modules/animation.css);
 
 .body{
     background-image: linear-gradient(var(--primary-theme-color), var(--secondary-theme-color));

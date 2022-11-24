@@ -8,10 +8,14 @@
 .hero__name {
     font-size: 4rem;
     text-decoration: none;
+    display: flex;
+    animation: zoom 0.5s ease-in-out 0s infinite alternate;
 }
 
 .hero__letter{
     position: relative;
+    display: inline-block;
+    transition: filter 1 ease-in-out;
 }
 
 .hero__letter::after{
@@ -32,6 +36,11 @@
     transform: scale(1.125);
 }
 
+.hero__letter:hover{
+    filter: brightness(2.5);
+    transform: scale(2);
+
+}
 .hero__letter:nth-child(1) {
     color: red;
 }
