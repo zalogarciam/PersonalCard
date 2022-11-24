@@ -4,3 +4,35 @@
     justify-content: center;
     min-height: 100vh;
 }
+
+.hero__name {
+    font-size: 4rem;
+}
+
+.hero__letter:nth-child(1) {
+    color: red;
+}
+
+.hero__letter:nth-child(2) {
+    color: blue;
+}
+
+.hero__letter:nth-child(3) {
+    color: orange;
+}
+
+.hero__letter:nth-child(4) {
+    color: purple;
+}
+
+.hero__letter:nth-child(5) {
+    color: green;
+}
+
+.hero__letter:nth-child(6) {
+    color: #00bef8;
+}
+
+.hero__letter:nth-child(7) {
+    color: yellow;
+}
