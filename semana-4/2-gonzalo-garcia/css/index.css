@@ -1,18 +1,14 @@
-@import './modules/variables.css';
-@import './modules/header.css';
-@import './modules/nav.css';
-@import './modules/layout.css';
-@import './modules/list.css';
-@import './modules/utils.css';
+@import "./modules/variables.css";
+@import "./modules/header.css";
+@import "./modules/nav.css";
+@import "./modules/layout.css";
+@import "./modules/list.css";
+@import "./modules/utils.css";
+@import "./modules/card.css";
 
 .body {
   background-color: var(--primary-theme-color);
   color: var(--primary-text-color);
   font-family: var(--primary-font-family);
   margin: 0;
-}
-
-.main {
-  
-
 }

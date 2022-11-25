@@ -1,25 +1,21 @@
-.p-relative{
-    position: relative;;
-}
-
-.flex-1 {
-    flex: 1;
+.p-relative {
+  position: relative;
 }
 
 .f-direction-column {
-    flex-direction: column;
-  }
-  
-.gap-sm {
-    gap: calc(var(--padding-section) * 0.5);
+  flex-direction: column;
 }
-  
+
+.gap-sm {
+  gap: calc(var(--padding-section) * 0.5);
+}
+
 .gap-md {
-    gap: var(--padding-section);
+  gap: var(--padding-section);
 }
 
 @media (min-width: 768px) {
-    .md\:f-direction-row {
-      flex-direction: row;
-    }
+  .md\:f-direction-row {
+    flex-direction: row;
   }
+}
