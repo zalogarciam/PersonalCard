@@ -49,8 +49,8 @@
 }
 
 .section__letter:nth-child(7) {
-    color: var(--letter-color-7);
-  }
+  color: var(--letter-color-7);
+}
 
 .section__letter::before {
   content: var(--letter);
@@ -84,4 +84,13 @@
 .f-elements--center {
   align-items: center;
   justify-content: center;
+}
+
+.section__verse {
+  font-weight: 100;
+  font-size: x-large;
+  text-shadow: 0 0 0.0625rem var(--primary-highlight-color),
+    0 0 0.125rem var(--primary-highlight-color),
+    0 0 0.25rem var(--primary-highlight-color),
+    0 0 0.1rem var(--primary-highlight-color);
 }

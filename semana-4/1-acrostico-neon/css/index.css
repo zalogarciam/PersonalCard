@@ -1,7 +1,8 @@
-@import url(./modules/variables.css);
-@import url(./modules/animation.css);
-@import url(./modules/layout.css);
-
+@import './modules/variables.css';
+@import './modules/utils.css';
+@import './modules/animations.css';
+@import './modules/layout.css';
+@import './modules/list.css';
 
 .body{
     background-image: linear-gradient(var(--primary-theme-color), var(--secondary-theme-color));
