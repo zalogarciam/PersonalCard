@@ -6,8 +6,20 @@
   position: relative;
 }
 
+.m-top-auto {
+  margin-top: auto;
+}
+
+.j-items-center {
+  justify-items: center;
+}
+
 .f-direction-column {
   flex-direction: column;
+}
+
+.gap-xs {
+  gap: calc(var(--padding-section) * 0.25);
 }
 
 .gap-sm {
