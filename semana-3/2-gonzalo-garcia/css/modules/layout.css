@@ -36,6 +36,18 @@
     background-size: cover;
   }
 
+  .section__hero-img{
+
+  }
+
+  .section__hero-tech {
+
+  }
+
+  .section__hero-technologies{
+
+  }
+  
   @media (min-width: 768px) {
     .f-elements--responsive {
       flex-direction: row;
