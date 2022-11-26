@@ -18,12 +18,16 @@
   gap: var(--padding-section);
 }
 
+.gap-lg {
+  gap: calc(var(--padding-section) * 1.5);
+}
+
 @media (min-width: 768px) {
-  .md\:f-direction-row {
-    flex-direction: row;
+  .md\:d-block {
+    display: block;
   }
 
-  .md\:d-none {
-    display: block;
+  .md\:f-direction-row {
+    flex-direction: row;
   }
 }

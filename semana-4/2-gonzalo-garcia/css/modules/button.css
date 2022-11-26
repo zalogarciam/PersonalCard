@@ -3,9 +3,9 @@
   border: 0.0625rem solid var(--primary-theme-color);
   border-radius: var(--primary-border-radius);
   color: var(--primary-text-color);
+  font-family: var(--primary-font-famly);
   font-size: 1rem;
   font-weight: 600;
-  font-family: var(--primary-font-family);
   text-decoration: none;
   padding: 0.25em 1em;
   cursor: pointer;
@@ -13,7 +13,7 @@
 }
 
 .button:hover {
-  box-shadow: 0 0 0.125rem 0.125rem var(--primary-theme-color);
+  box-shadow: 0 0 0.125rem 0.0625rem var(--primary-theme-color);
   filter: brightness(1.125);
 }
 
@@ -23,11 +23,15 @@
   color: var(--reverse-primary-text-color);
 }
 
+.button--primary:hover {
+  box-shadow: 0 0 0.25rem 0.0625rem var(--primary-highlight-color);
+}
+
 .button--outline-primary {
   background-color: transparent;
   border: 0.0625rem solid var(--primary-highlight-color);
 }
 
-.button--primary:hover {
+.button--outline-primary:hover {
   box-shadow: 0 0 0.25rem 0 var(--primary-highlight-color);
 }
