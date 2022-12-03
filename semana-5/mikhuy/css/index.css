@@ -1,3 +1,15 @@
+.gap-sm {
+  gap: calc(var(--padding-section) * 0.25);
+}
+
+.f-elements {
+  display: flex;
+}
+.f-elements--header {
+  align-items: center;
+  justify-content: space-between;
+}
+
 .header {
   background-color: var(--primary-theme-color);
   z-index: 25;
@@ -35,14 +47,6 @@
 .list__link:hover {
   background-color: var(--primary-highlight-color);
   color: var(--reverse-primary-text-color);
-}
-
-.f-elements {
-  display: flex;
-}
-.f-elements--header {
-  align-items: center;
-  justify-content: space-between;
 }
 
 /*# sourceMappingURL=index.css.map */
