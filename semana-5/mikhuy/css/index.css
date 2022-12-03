@@ -1,9 +1,20 @@
-@import './modules/variables.css';
-.body {
+.header {
   background-color: var(--primary-theme-color);
-  color: var(--primary-text-color);
-  font-family: var(--primary-font-family);
-  margin: 0;
+  z-index: 25;
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: fixed;
+  box-shadow: 0 0 0.125rem var(--primary-shadow-color);
+}
+
+.nav {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.nav__logo {
+  font-size: 1.75rem;
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -1,8 +1,2 @@
-@import './modules/variables.css';
-
-.body {
-    background-color: var(--primary-theme-color);
-    color: var(--primary-text-color);
-    font-family: var(--primary-font-family);
-    margin: 0;
-  }
+@import './modules/header';
+@import './modules/nav';
