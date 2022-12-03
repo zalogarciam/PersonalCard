@@ -1,0 +1,20 @@
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &__link{
+        display: flex;
+        background-color: var(--secondary-theme-color);
+        text-decoration: none;
+        color: var(--primary-text-color);
+        padding: 0.25em 1em;
+        border-radius: var(--primary-border-radius);
+        transition: background-color 0.25s, color 0.25s;
+    }
+
+    &__link:hover{
+        background-color: var(--primary-highlight-color);
+        color: var(--secondary-theme-color);
+    }
+}
