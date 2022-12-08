@@ -1,5 +1,6 @@
 'use strict';
 
+const nav = document.querySelector('nav');
 const navMenuIcon = document.getElementById('nav-menu-icon');
 const listHeader = document.getElementById('list-header');
 const navCloseIcon = document.getElementById('icon-close');
@@ -8,6 +9,9 @@ const navCloseIcon = document.getElementById('icon-close');
 console.log(navCloseIcon);
 console.log(navMenuIcon);
 
+document.addEventListener('scroll', () => {
+    nav.classList.toggle('nav--scroll', window.scrollY > 0);
+  });
 
 navCloseIcon.addEventListener('click', () => {
     // listHeader.style.pointerEvents ='none';

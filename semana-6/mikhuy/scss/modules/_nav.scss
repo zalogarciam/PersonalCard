@@ -1,7 +1,13 @@
 .nav {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-  
+    --padding-nav: 1rem;
+    padding-top: var(--padding-nav);
+    padding-bottom: var(--padding-nav);
+    transition: padding 0.25s;
+    
+    &--scroll{
+      --padding-nav: 0.5rem;
+    }
+
     &__logo {
       font-size: 1.75rem;
       text-decoration: none;
