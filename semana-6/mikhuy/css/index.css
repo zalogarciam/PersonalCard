@@ -74,6 +74,7 @@
 .nav__logo {
   font-size: 1.75rem;
   text-decoration: none;
+  display: flex;
 }
 
 .list {

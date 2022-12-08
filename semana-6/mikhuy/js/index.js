@@ -10,6 +10,7 @@ console.log(navMenuIcon);
 
 
 navCloseIcon.addEventListener('click', () => {
+    listHeader.style.pointerEvents ='none';
     listHeader.style.opacity = 0
 });
 
