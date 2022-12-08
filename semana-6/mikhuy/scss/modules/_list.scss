@@ -22,6 +22,11 @@
       flex-direction: column;
     }
 
+    &--header-show{
+      opacity: 1;
+      pointer-events: auto;
+    }
+
     &__link {
       display: flex;
       background-color: var(--secondary-theme-color);

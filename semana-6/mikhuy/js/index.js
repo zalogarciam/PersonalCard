@@ -10,12 +10,14 @@ console.log(navMenuIcon);
 
 
 navCloseIcon.addEventListener('click', () => {
-    listHeader.style.pointerEvents ='none';
-    listHeader.style.opacity = 0
+    // listHeader.style.pointerEvents ='none';
+    // listHeader.style.opacity = 0;
+    listHeader.classList.remove('list--header-show');
 });
 
 navMenuIcon.addEventListener('click', () => {
-    listHeader.style.pointerEvents ='auto';
-    listHeader.style.opacity = 1
+    // listHeader.style.pointerEvents ='auto';
+    // listHeader.style.opacity = 1;
+    listHeader.classList.add('list--header-show');
 });
 

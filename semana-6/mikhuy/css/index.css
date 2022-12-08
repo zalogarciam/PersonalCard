@@ -99,6 +99,10 @@
   z-index: 1;
   flex-direction: column;
 }
+.list--header-show {
+  opacity: 1;
+  pointer-events: auto;
+}
 .list__link {
   display: flex;
   background-color: var(--secondary-theme-color);
