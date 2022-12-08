@@ -18,6 +18,10 @@
   gap: calc(var(--padding-section) * 0.5);
 }
 
+.gap-md {
+  gap: calc(var(--padding-section));
+}
+
 .section {
   padding-top: var(--padding-section);
   padding-bottom: var(--padding-section);
@@ -102,6 +106,16 @@
   pointer-events: none;
   transition: opacity 0.25s;
 }
+@media (min-width: 768px) {
+  .list--header {
+    position: static;
+    background-color: transparent;
+    width: auto;
+    height: auto;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
 .list--header-show {
   opacity: 1;
   pointer-events: auto;
@@ -125,10 +139,15 @@
   color: var(--primary-text-color);
   font-size: 1.75rem;
 }
+@media (min-width: 768px) {
+  .icon--menu, .icon--close {
+    display: none;
+  }
+}
 .icon--close {
   position: absolute;
   top: 1rem;
-  right: 1rem;
+  right: var(--padding-container);
 }
 
 /*# sourceMappingURL=index.css.map */
