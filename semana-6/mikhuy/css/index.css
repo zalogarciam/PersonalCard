@@ -56,6 +56,14 @@
   align-items: center;
   justify-content: center;
 }
+.f-elements--responsive {
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .f-elements--responsive {
+    flex-direction: row;
+  }
+}
 
 .header {
   background-color: var(--primary-theme-color);
@@ -93,11 +101,6 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-  flex-direction: column;
 }
 .list--header-show {
   opacity: 1;
