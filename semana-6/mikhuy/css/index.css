@@ -84,7 +84,7 @@
 }
 .list--header {
   position: fixed;
-  top: 4rem;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
@@ -93,6 +93,11 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  flex-direction: column;
 }
 .list__link {
   display: flex;
@@ -112,6 +117,11 @@
 .icon {
   color: var(--primary-text-color);
   font-size: 1.75rem;
+}
+.icon--close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 
 /*# sourceMappingURL=index.css.map */

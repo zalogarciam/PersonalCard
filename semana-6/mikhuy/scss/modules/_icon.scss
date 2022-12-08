@@ -1,4 +1,11 @@
 .icon {
     color: var(--primary-text-color);
     font-size: 1.75rem;
+
+    &--close{
+       position: absolute;
+       top: 1rem;
+       right: 1rem;
+      }
 }
+
