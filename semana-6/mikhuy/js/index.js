@@ -1,9 +1,11 @@
 'use strict';
 
 const navMenuIcon = document.getElementById('nav-menu-icon');
+const listHeader = document.getElementById('list-header');
+
 // const navMenuIcon = document.querySelector('#nav-menu-icon');
 console.log(navMenuIcon);
 
 navMenuIcon.addEventListener('click', () => {
-    alert('You clicked');
+    listHeader.style.opacity = '1'
 });
