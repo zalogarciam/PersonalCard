@@ -96,4 +96,9 @@
   color: var(--reverse-primary-text-color);
 }
 
+.icon {
+  color: var(--primary-text-color);
+  font-size: 1.75rem;
+}
+
 /*# sourceMappingURL=index.css.map */

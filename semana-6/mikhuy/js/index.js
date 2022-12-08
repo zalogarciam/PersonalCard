@@ -3,3 +3,7 @@
 const navMenuIcon = document.getElementById('nav-menu-icon');
 // const navMenuIcon = document.querySelector('#nav-menu-icon');
 console.log(navMenuIcon);
+
+navMenuIcon.addEventListener('click', () => {
+    alert('You clicked');
+});
