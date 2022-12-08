@@ -1,0 +1,9 @@
+.header {
+    background-color: var(--primary-theme-color);
+    z-index: 25;
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: fixed;
+    box-shadow: 0 0 0.125rem var(--primary-shadow-color);
+}
