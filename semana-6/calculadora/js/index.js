@@ -9,7 +9,8 @@ const documentReady = () => {
     const operator = document.getElementById('operator').value;
     const number2 = document.getElementById('number2').value;
 
-    alert(eval(+number1 + operator + +number2));
+    var result =(eval(+number1 + operator + +number2))
+    resultContainer.innerText = result;
   };
 
   calculatorForm.addEventListener('submit', calculate);
