@@ -14,19 +14,23 @@ const documentReady = () => {
     const special = documentFormPokemon.special.value;
     const imgUrl = documentFormPokemon.imgUrl.value;
     console.log({ name, type, hp, attack, special, imgUrl });
+    readPokemons({ name, type, hp, attack, special, imgUrl });
+  };
 
+  const readPokemons = (pokemon) => {
+    const { name, type, hp, attack, special, imgUrl } = pokemon;
     tBodyPokemons.innerHTML += `<tr>
-      <td> 1 </td>
-      <td> ${name} </td>
-      <td>${type}</td>
-      <td>${hp} </td>
-      <td>${attack}</td>
-      <td>${special}</td>
-      <td>
-      ${imgUrl}
-      </td>
-      <td> 🗑️ | ✏️</td>
-  </tr>`;
+    <td> 1 </td>
+    <td> ${name} </td>
+    <td>${type}</td>
+    <td>${hp} </td>
+    <td>${attack}</td>
+    <td>${special}</td>
+    <td>
+    ${imgUrl}
+    </td>
+    <td> 🗑️ | ✏️</td>
+</tr>`;
   };
 
   formPokemon.addEventListener("submit", createPokemon);
