@@ -23,7 +23,14 @@ const documentReady = () => {
 
   const createPokemon = (e) => {
     e.preventDefault();
-    console.log("Gon");
+    const documentFormPokemon = document.forms["formPokemon"];
+    const name = documentFormPokemon.name.value;
+    const type = documentFormPokemon.type.value;
+    const hp = documentFormPokemon.hp.value;
+    const attack = documentFormPokemon.attack.value;
+    const special = documentFormPokemon.special.value;
+    const imgUrl = documentFormPokemon.imgUrl.value;
+    console.log({ name, type, hp, attack, special, imgUrl });
   };
 
   formPokemon.addEventListener("submit", createPokemon);
