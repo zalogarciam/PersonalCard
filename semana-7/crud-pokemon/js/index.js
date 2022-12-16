@@ -37,6 +37,14 @@ const documentReady = () => {
               src="${imgUrl}"
               alt="${name}" class="img-fluid" style="max-width: 128px;" />
           </td>
+          <td>
+          <button 
+            class="btn btn-danger"
+            onclick="deletePokemon(${index})"
+          >
+            🗑
+          </button>
+        </td>
         </tr>
       `;
     });
@@ -44,6 +52,10 @@ const documentReady = () => {
 
   readPokemons();
   formPokemon.addEventListener("submit", createPokemon);
+};
+
+const deletePokemon = (index) => {
+  alert("deletePokemon: " + index);
 };
 
 document.addEventListener("DOMContentLoaded", documentReady);
