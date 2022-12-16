@@ -36,54 +36,66 @@ const readPokemons = () => {
             alt="${name}" class="img-fluid" style="max-width: 128px;" />
         </td>
         <td>
-          <button 
-            class="btn btn-danger"
-            onclick="deletePokemon(${index})"
-          >
-            🗑
-          </button>
+        <button 
+        class="btn btn-info m-1"
+        onclick="readPokemon(${index})"
+      >
+        ✏
+      </button>
+      <button 
+        class="btn btn-danger m-1"
+        onclick="deletePokemon(${index})"
+      >🗑
         </td>
       </tr>
     `;
   });
 };
 
+const readPokemon = (index) => {
+  // const pokemon = pokemons.find((_, i) => {
+  //   return i === index;
+  // });
+  const pokemon = pokemons.slice(index, index + 1)[0];
+  console.log(pokemon);
+};
+
 const deletePokemon = (index) => {
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
-      confirmButton: 'btn btn-success mx-1',
-      cancelButton: 'btn btn-danger mx-1'
+      confirmButton: "btn btn-success mx-1",
+      cancelButton: "btn btn-danger mx-1",
     },
-    buttonsStyling: false
+    buttonsStyling: false,
   });
-  swalWithBootstrapButtons.fire({
-    title: '¿Está seguro?',
-    text: "¡No podrás revertir esto!",
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonText: '¡Sí, elimínalo!',
-    cancelButtonText: '¡No, cancélalo!',
-    reverseButtons: true
-  }).then((result) => {
-    if (result.isConfirmed) {
-      pokemons.splice(index, 1);
-      localStorage.setItem(POKEMONS_CRUD_DATA, JSON.stringify(pokemons));
-      readPokemons();
-      swalWithBootstrapButtons.fire(
-        '¡Eliminado!',
-        'Tu registro ha sido eliminado.',
-        'success'
-      );
-    } else if (
-      result.dismiss === Swal.DismissReason.cancel
-    ) {
-      swalWithBootstrapButtons.fire(
-        'Cancelado',
-        'Tu registro está seguro',
-        'error'
-      );
-    }
-  });
+  swalWithBootstrapButtons
+    .fire({
+      title: "¿Está seguro?",
+      text: "¡No podrás revertir esto!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "¡Sí, elimínalo!",
+      cancelButtonText: "¡No, cancélalo!",
+      reverseButtons: true,
+    })
+    .then((result) => {
+      if (result.isConfirmed) {
+        pokemons.splice(index, 1);
+        localStorage.setItem(POKEMONS_CRUD_DATA, JSON.stringify(pokemons));
+        readPokemons();
+        swalWithBootstrapButtons.fire(
+          "¡Eliminado!",
+          "Tu registro ha sido eliminado.",
+          "success"
+        );
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        swalWithBootstrapButtons.fire(
+          "Cancelado",
+          "Tu registro está seguro",
+          "error"
+        );
+      }
+    });
 };
 
 const documentReady = () => {
