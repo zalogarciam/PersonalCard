@@ -58,6 +58,15 @@ const readPokemon = (index) => {
   // });
   const pokemon = pokemons.slice(index, index + 1)[0];
   console.log(pokemon);
+  const { name, type, hp, attack, special, imgUrl } = pokemon;
+  const documentFormPokemon = document.forms["formPokemon"];
+  documentFormPokemon.index.value = index;
+  documentFormPokemon.name.value = name;
+  documentFormPokemon.type.value = type;
+  documentFormPokemon.hp.value = hp;
+  documentFormPokemon.attack.value = attack;
+  documentFormPokemon.special.value = special;
+  documentFormPokemon.imgUrl.value = imgUrl;
 };
 
 const deletePokemon = (index) => {
@@ -101,8 +110,18 @@ const deletePokemon = (index) => {
 const documentReady = () => {
   const formPokemon = document.getElementById("formPokemon");
 
+  const submitPokemon = (e) => {
+    e.preventDefault();
+    const index = document.getElementById("index").value;
+    if (index === "") {
+      console.log("create");
+    } else {
+      console.log("update");
+    }
+  };
+
   readPokemons();
-  formPokemon.addEventListener("submit", createPokemon);
+  formPokemon.addEventListener("submit", submitPokemon);
 };
 
 document.addEventListener("DOMContentLoaded", documentReady);
