@@ -1,4 +1,5 @@
-import { comidas } from "../../utils/data.js";
+// import { comidas } from "../../utils/data.js";
+import comidas from '../../utils/data.json' assert {type: 'json'};
 
 const foods = () => {
   const foodsFoods = document.getElementById('foodsFoods');
