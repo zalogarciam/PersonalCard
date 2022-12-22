@@ -1,5 +1,9 @@
 "use strict";
 
-const documentReady = () => {};
+import foods from "./modules/food.js";
+
+const documentReady = () => {
+  foods();
+};
 
 document.addEventListener("DOMContentLoaded", documentReady);
