@@ -1,6 +1,11 @@
 const characters = () => {
+  const previousCharacters = document.getElementById("previousCharacters");
+  const nextCharacters = document.getElementById("nextCharacters");
+  let page = 1;
+
   const renderCharacters = (data) => {
     const charactersContainer = document.getElementById("charactersContainer");
+    charactersContainer.innerHTML = "";
 
     data.forEach((element) => {
       const {
@@ -30,39 +35,48 @@ const characters = () => {
                 type || "Chanchito"
               }</h6>
               <p class="card-text">
-              <span class="badge text-bg-info">${status}</span>
-              <span class="badge text-bg-primary">${species}</span>
-              <span class="badge text-bg-secondary">${gender}</span>
-            </p>
-            <p class="card-text"><span class="text-info fw-bold">Origen:</span> ${
-              origin.name
-            }</p>
-            <p class="card-text"><span class="text-info fw-bold">Ubicación:</span> ${
-              location.name
-            }</p>
-          </div>
-          <div class="card-footer text-center">
-            <a href="${image}" target="_blank" rel="noopener noreferrer" class="card-link">Descargar imagen</a>
+                <span class="badge text-bg-info">${status}</span>
+                <span class="badge text-bg-primary">${species}</span>
+                <span class="badge text-bg-secondary">${gender}</span>
+              </p>
+              <p class="card-text"><span class="text-info fw-bold">Origen:</span> ${
+                origin.name
+              }</p>
+              <p class="card-text"><span class="text-info fw-bold">Ubicación:</span> ${
+                location.name
+              }</p>
+            </div>
+            <div class="card-footer text-center">
+              <a href="${image}" target="_blank" rel="noopener noreferrer" class="card-link">Descargar imagen</a>
+            </div>
           </div>
         </div>
-      </div>
       `;
     });
   };
 
-  const fetchRead = async () => {
+  const fetchRead = async (page) => {
     try {
       const { data } = await axios.get(
-        "https://rickandmortyapi.com/api/character?page=1"
+        `https://rickandmortyapi.com/api/character?page=${page}`
       );
       renderCharacters(data.results);
     } catch (error) {
       console.log(error);
     } finally {
-      console.log("fetchRead");
+      window.scrollTo(0, 0);
     }
   };
-  fetchRead();
+
+  previousCharacters.addEventListener("click", () => {
+    fetchRead(--page);
+  });
+
+  nextCharacters.addEventListener("click", () => {
+    fetchRead(++page);
+  });
+
+  fetchRead(page);
 };
 
 export default characters;
