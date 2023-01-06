@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Header from "./components/sections/Header";
 import Footer from "./components/sections/Footer";
+import Appointments from "./pages/Appointmets";
 
 function App() {
   const company = {
@@ -16,7 +17,11 @@ function App() {
 
   return (
     <>
-      <Header company={company} />;<Footer credits={credits}></Footer>
+      <Header company={company} />
+      <main>
+        <Appointments />
+      </main>
+      <Footer credits={credits} />{" "}
     </>
   );
 }
