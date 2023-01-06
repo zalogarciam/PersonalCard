@@ -2,11 +2,11 @@ import logo from "./logo.svg";
 import "./App.css";
 import Header from "./components/sections/Header";
 import Footer from "./components/sections/Footer";
-import Appointments from "./pages/Appointmets";
+import Appointments from "./pages/Appointments";
 
 function App() {
   const company = {
-    name: "Patita Feliz",
+    name: "🐾 Patita Feliz 🐾",
     slogan: "La mejor veterinaria del Peru 🐶",
   };
 
