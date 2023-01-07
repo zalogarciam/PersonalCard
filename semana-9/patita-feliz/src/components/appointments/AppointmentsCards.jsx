@@ -1,5 +1,5 @@
 const AppointmentsCards = () => {
-  return <h3>Apppointment Cards</h3>;
+  return <h3>AppointmentsCards</h3>;
 };
 
 export default AppointmentsCards;
