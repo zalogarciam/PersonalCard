@@ -12,7 +12,10 @@ const Appointments = () => {
           appointments={appointments}
           setAppointments={setAppointments}
         />
-        <AppointmentsCards appointments={appointments} />
+        <AppointmentsCards
+          appointments={appointments}
+          setAppointments={setAppointments}
+        />
       </div>
     </section>
   );
