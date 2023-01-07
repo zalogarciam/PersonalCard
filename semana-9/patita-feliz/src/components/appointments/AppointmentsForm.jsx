@@ -22,13 +22,13 @@ const AppointmentsForm = ({ appointments, setAppointments }) => {
   };
 
   return (
-    <div className="d-flex flex-column gap-3">
+    <div className="col-md-6 d-flex flex-column gap-3">
       <h3 className="text-center m-0">🐶 Crear Cita 🐶</h3>
-      <form className="text-dark" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <div className="form-floating mb-3">
           <input
             type="text"
-            className="form-control"
+            className="form-control bg-transparent text-light"
             id="mascota"
             placeholder="Nombre de la mascota"
             onInput={handleInput}
@@ -38,7 +38,7 @@ const AppointmentsForm = ({ appointments, setAppointments }) => {
         <div className="form-floating mb-3">
           <input
             type="text"
-            className="form-control"
+            className="form-control bg-transparent text-light"
             id="propietario"
             placeholder="Nombre del propietario"
             onInput={handleInput}
@@ -48,7 +48,7 @@ const AppointmentsForm = ({ appointments, setAppointments }) => {
         <div className="form-floating mb-3">
           <input
             type="date"
-            className="form-control"
+            className="form-control bg-transparent text-light"
             id="fecha"
             placeholder="Fecha"
             onInput={handleInput}
@@ -58,7 +58,7 @@ const AppointmentsForm = ({ appointments, setAppointments }) => {
         <div className="form-floating mb-3">
           <input
             type="time"
-            className="form-control"
+            className="form-control bg-transparent text-light"
             id="hora"
             placeholder="Hora"
             onInput={handleInput}
@@ -68,7 +68,7 @@ const AppointmentsForm = ({ appointments, setAppointments }) => {
         <div className="form-floating mb-3">
           <input
             type="text"
-            className="form-control"
+            className="form-control bg-transparent text-light"
             id="síntomas"
             placeholder="Síntomas"
             onInput={handleInput}

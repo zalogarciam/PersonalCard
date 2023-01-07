@@ -7,7 +7,7 @@ const Appointments = () => {
 
   return (
     <section className="py-4">
-      <div className="container d-flex justify-content-between">
+      <div className="container row mx-auto g-4">
         <AppointmentsForm
           appointments={appointments}
           setAppointments={setAppointments}
