@@ -17,16 +17,44 @@ const Header = () => {
           <div className="modal modal--header">
             <ul className="list list--header">
               <li>
-                <a className="list__link">Productos</a>
+                <a
+                  onClick={() => {
+                    console.log("Test");
+                  }}
+                  className="list__link"
+                >
+                  Productos
+                </a>
               </li>
               <li>
-                <a className="list__link">Servicios</a>
+                <a
+                  onClick={() => {
+                    console.log("Test");
+                  }}
+                  className="list__link"
+                >
+                  Servicios
+                </a>
               </li>
               <li>
-                <a className="list__link">Nosotros</a>
+                <a
+                  onClick={() => {
+                    console.log("Test");
+                  }}
+                  className="list__link"
+                >
+                  Nosotros
+                </a>
               </li>
               <li>
-                <a className="list__link">Contacto</a>
+                <a
+                  onClick={() => {
+                    console.log("Test");
+                  }}
+                  className="list__link"
+                >
+                  Contacto
+                </a>
               </li>
             </ul>
           </div>
