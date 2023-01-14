@@ -1,9 +1,23 @@
 import { Link } from "react-router-dom";
 import logoEAKON from "../../assets/img/logo-eakon.webp";
+import { useRef } from "react";
 
 const Header = () => {
+  const header = useRef();
+  const modal = useRef();
+
+  const showMenu = () => {
+    header.current.classList.add("header--menu");
+    modal.current.classList.add("modal--show");
+  };
+
+  const hideMenu = () => {
+    header.current.classList.remove("header--menu");
+    modal.current.classList.remove("modal--show");
+  };
+
   return (
-    <header className="header">
+    <header className="header" ref={header}>
       <nav className="nav">
         <div className="container f-elements f-elements--header">
           <Link to="/">
@@ -15,7 +29,7 @@ const Header = () => {
               height="32"
             />
           </Link>
-          <div className="modal modal--header">
+          <div className="modal modal--header" ref={modal} onClick={hideMenu}>
             <ul className="list list--header">
               <li>
                 <Link to="/productos" className="list__link">
@@ -45,7 +59,9 @@ const Header = () => {
               <option value="value2">☀</option>
               <option value="value3">💻</option>
             </select>
-            <button className="icon">🍔</button>
+            <button className="icon" onClick={showMenu}>
+              🍔
+            </button>
           </div>
         </div>
       </nav>
