@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import logoEAKON from "../../assets/img/logo-eakon.webp";
 import { useRef } from "react";
+import { Link, NavLink } from "react-router-dom";
+import logoEAKON from "../../assets/img/logo-eakon.webp";
 
 const Header = () => {
   const header = useRef();
@@ -30,34 +30,63 @@ const Header = () => {
             />
           </Link>
           <div className="modal modal--header" ref={modal} onClick={hideMenu}>
-            <ul className="list list--header">
+            <ul
+              className="list list--header"
+              onClick={(e) => e.stopPropagation()}
+            >
               <li>
-                <Link to="/productos" className="list__link">
+                <NavLink
+                  to="/productos"
+                  className={({ isActive }) =>
+                    isActive ? "list__link list__link--active" : "list__link"
+                  }
+                  onClick={hideMenu}
+                >
                   Productos
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link to="/servicios" className="list__link">
+                <NavLink
+                  to="/servicios"
+                  className={({ isActive }) =>
+                    isActive ? "list__link list__link--active" : "list__link"
+                  }
+                  onClick={hideMenu}
+                >
                   Servicios
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link to="/nosotros" className="list__link">
+                <NavLink
+                  to="/nosotros"
+                  className={({ isActive }) =>
+                    isActive ? "list__link list__link--active" : "list__link"
+                  }
+                  onClick={hideMenu}
+                >
                   Nosotros
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link to="/contacto" className="list__link">
+                <NavLink
+                  to="/contacto"
+                  className={({ isActive }) =>
+                    isActive ? "list__link list__link--active" : "list__link"
+                  }
+                  onClick={hideMenu}
+                >
                   Contacto
-                </Link>
+                </NavLink>
               </li>
-              <li className="icon icon--close">❌</li>
+              <li className="icon icon--close" onClick={hideMenu}>
+                ❌
+              </li>
             </ul>
           </div>
           <div className="f-elements f-elements--center">
             <select>
-              <option value="value1">🌑</option>
-              <option value="value2">☀</option>
+              <option value="value1">🌚</option>
+              <option value="value2">🌞</option>
               <option value="value3">💻</option>
             </select>
             <button className="icon" onClick={showMenu}>
