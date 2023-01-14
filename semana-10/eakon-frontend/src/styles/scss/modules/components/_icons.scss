@@ -18,4 +18,11 @@
     top: var(--padding-nav);
     right: var(--container-padding);
   }
+
+  &--close,
+  &--menu {
+    @include desktop {
+      display: none;
+    }
+  }
 }

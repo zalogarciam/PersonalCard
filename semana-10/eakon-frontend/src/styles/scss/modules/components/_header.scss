@@ -9,4 +9,8 @@
   &--move {
     left: -50%;
   }
+
+  @include desktop {
+    left: 0;
+  }
 }

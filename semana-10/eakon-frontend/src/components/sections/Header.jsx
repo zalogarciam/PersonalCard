@@ -90,7 +90,7 @@ const Header = () => {
               <option value="value2">🌞</option>
               <option value="value3">💻</option>
             </select> */}
-            <button className="icon" onClick={showMenu}>
+            <button className="icon icon--menu" onClick={showMenu}>
               <BsList />
             </button>
           </div>
