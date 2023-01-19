@@ -1,0 +1,22 @@
+.f-elements {
+  display: flex;
+
+  &--header {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &--responsive {
+    flex-direction: column;
+    @include desktop{
+      flex-direction: row;
+    }
+  }
+
+  &--center {
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+  }
+}
