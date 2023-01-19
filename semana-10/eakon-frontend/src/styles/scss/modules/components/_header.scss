@@ -7,6 +7,6 @@
   transition: left 0.25s, background-color 0.25s, box-shadow 0.25s;
 
   @include desktop {
-    right: 0;
+    left: 0;
   }
 }
