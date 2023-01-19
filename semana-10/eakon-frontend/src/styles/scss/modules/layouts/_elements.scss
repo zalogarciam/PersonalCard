@@ -6,6 +6,13 @@
     justify-content: space-between;
   }
 
+  &--responsive {
+    flex-direction: column;
+    @include desktop{
+      flex-direction: row;
+    }
+  }
+
   &--center {
     align-items: center;
     align-content: center;

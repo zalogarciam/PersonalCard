@@ -6,11 +6,7 @@
   width: 100%;
   transition: left 0.25s, background-color 0.25s, box-shadow 0.25s;
 
-  &--move {
-    left: -50%;
-  }
-
   @include desktop {
-    left: 0;
+    right: 0;
   }
 }

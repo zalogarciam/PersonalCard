@@ -32,7 +32,7 @@ const Header = () => {
           </Link>
           <div className="modal modal--header" ref={modal} onClick={hideMenu}>
             <ul
-              className="list list--header"
+              className="list list--header f-elements f-elements--responsive f-elements--center gap-md"
               onClick={(e) => e.stopPropagation()}
             >
               <li>

@@ -4,7 +4,7 @@
     list-style: none;
   
     &--header {
-      @include f-elements(column, center, center, calc(var(--section-padding) * 0.75));
+      // @include f-elements(column, center, center, calc(var(--section-padding) * 0.75));
       background-image: linear-gradient(to bottom, var(--light-primary-shadow-color), var(--light-secondary-shadow-color));
       width: 50%;
       height: 100%;
@@ -13,8 +13,8 @@
       transition: 0.25s;
   
       @include desktop {
-        flex-direction: row;
-        background-color: none;
+        // flex-direction: row;
+        background-image: none;
         width: auto;
       }
     }
