@@ -8,12 +8,12 @@ const Header = () => {
   const modal = useRef();
 
   const showMenu = () => {
-    header.current.classList.add("header--move");
+    header.current.classList.add("right-50");
     modal.current.classList.add("modal--show");
   };
 
   const hideMenu = () => {
-    header.current.classList.remove("header--move");
+    header.current.classList.remove("right-50");
     modal.current.classList.remove("modal--show");
   };
 
