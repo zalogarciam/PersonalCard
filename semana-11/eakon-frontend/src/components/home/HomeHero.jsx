@@ -1,29 +1,34 @@
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-
+import { Navigation, Pagination, Autoplay, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
 
-const HomeHero = () => {
+const HomeHero = ({ heroProducts }) => {
   return (
     <Swiper
-      // install Swiper modules
-      modules={[Navigation, Pagination, Scrollbar, A11y]}
-      spaceBetween={50}
-      slidesPerView={3}
+      tag="section"
+      wrapperTag="div"
+      className="hero"
+      modules={[A11y, Autoplay, Navigation, Pagination]}
+      autoplay={{ delay: 5000 }}
       navigation
       pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log("slide change")}
+      loop
+      preloadImages={false}
     >
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-      ...
+      {heroProducts.map((element) => {
+        const { nombre, imagen } = element.attributes;
+        return (
+          <SwiperSlide
+            key={element.id}
+            tag="section"
+            style={{
+              backgroundImage: `url(${imagen.data[0].attributes.url}`,
+              height: "100vh",
+            }}
+          >
+            {nombre}
+          </SwiperSlide>
+        );
+      })}
     </Swiper>
   );
 };
