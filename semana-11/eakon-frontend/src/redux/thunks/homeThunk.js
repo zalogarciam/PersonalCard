@@ -7,9 +7,10 @@ export const fetchReadHeroProducts = createAsyncThunk(
     try {
       const options = {
         method: "GET",
-        url: `/productos?filters[posicion][slug][$eq]=cabecera&populate=subcategoria,marca,imagen`,
+        url: `/productos`,
       };
       const { data } = await axiosInstance(options);
+      console.log(data.data);
       return data.data ?? [];
     } catch (error) {
       console.log(error);
