@@ -22,13 +22,11 @@ const HomeHero = ({ heroProducts }) => {
             key={element.id}
             tag="section"
             zoom={true}
-            className="hero"
-            style={
-              {
-                // backgroundImage: `url(${imagen.data[0].attributes.url}`,
-                // height: "100vh",
-              }
-            }
+            className="section hero"
+            style={{
+              // backgroundImage: `linear-gradient(to right, var(--light-primary-shadow-color), var(--light-secondary-shadow-color)), url(${imagen.data[0].attributes.url})`
+              backgroundImage: `url(${imagen.data[0].attributes.url})`,
+            }}
           >
             <div className="container">
               <div className="card card--hero">
@@ -37,10 +35,8 @@ const HomeHero = ({ heroProducts }) => {
                   {marca.data[0].attributes.nombre} I{" "}
                   {subcategoria.data.attributes.nombre}
                 </h3>
-                <Link
-                  to={`/productos/${slug}`}
-                  className="button button--primary"
-                >
+                {/* <Link to={`/productos/${slug}`} className="button button--primary">Ver más</Link> */}
+                <Link to={`/`} className="button button--primary">
                   Ver más
                 </Link>
               </div>
