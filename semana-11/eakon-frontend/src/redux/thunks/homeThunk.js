@@ -14,6 +14,7 @@ export const fetchReadHeroProducts = createAsyncThunk(
     } catch (error) {
       console.log(error);
       return rejectWithValue(error);
+      
     }
   }
 );
