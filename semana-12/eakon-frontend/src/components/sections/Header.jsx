@@ -10,6 +10,12 @@ const Header = () => {
 
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "");
 
+  const documentScroll = () => {
+    header.current?.classList.toggle("header--scroll", window.scrollY > 0);
+  };
+
+  document.addEventListener("scroll", documentScroll);
+
   const showMenu = () => {
     header.current.classList.add("header--menu");
     modal.current.classList.add("modal--show");
