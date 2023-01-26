@@ -6,24 +6,25 @@ import logoEAKON from "../../assets/img/logo-eakon.webp";
 
 const Header = () => {
   const header = useRef();
-  const modal = useRef();
+  const nav = useRef();
 
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "");
 
   const documentScroll = () => {
     header.current?.classList.toggle("header--scroll", window.scrollY > 0);
+    nav.current?.classList.toggle("header--scroll", window.scrollY > 0);
   };
 
   document.addEventListener("scroll", documentScroll);
 
   const showMenu = () => {
     header.current.classList.add("header--menu");
-    modal.current.classList.add("modal--show");
+    nav.current.classList.add("modal--show");
   };
 
   const hideMenu = () => {
     header.current.classList.remove("header--menu");
-    modal.current.classList.remove("modal--show");
+    nav.current.classList.remove("modal--show");
   };
 
   const selectTheme = (e) => {
@@ -34,7 +35,7 @@ const Header = () => {
 
   return (
     <header className="header" ref={header}>
-      <nav className="nav">
+      <nav className="nav" ref={nav}>
         <div className="container f-elements f-elements--header">
           <Link to="/">
             <img
@@ -45,7 +46,7 @@ const Header = () => {
               height="32"
             />
           </Link>
-          <div className="modal modal--header" ref={modal} onClick={hideMenu}>
+          <div className="modal modal--header" ref={nav} onClick={hideMenu}>
             <ul
               className="list list--header f-elements f-elements--responsive f-elements--center gap-md"
               onClick={(e) => e.stopPropagation()}
