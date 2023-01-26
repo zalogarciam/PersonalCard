@@ -9,6 +9,7 @@ import {
 } from "../redux/thunks/homeThunk";
 
 import { fetchReadAboutUsData } from "../redux/thunks/aboutUsThunk";
+import LoadersModal from "../components/common/loaders/LoadersModal";
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ const HomePage = () => {
 
   return (
     <>
+      {loading && <LoadersModal></LoadersModal>}
       <HomeHero heroProducts={heroProducts} />
       <HomeBestSellers />
     </>
