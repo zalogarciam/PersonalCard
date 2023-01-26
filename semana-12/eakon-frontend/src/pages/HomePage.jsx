@@ -8,6 +8,8 @@ import {
   fetchReadHeroProducts,
 } from "../redux/thunks/homeThunk";
 
+import { fetchReadAboutUsData } from "../redux/thunks/aboutUsThunk";
+
 const HomePage = () => {
   const dispatch = useDispatch();
   const { heroProducts } = useHome();
@@ -15,6 +17,7 @@ const HomePage = () => {
   useEffect(() => {
     dispatch(fetchReadHeroProducts());
     dispatch(fetchReadBestSellersProducts());
+    dispatch(fetchReadAboutUsData());
   }, []);
 
   return (
