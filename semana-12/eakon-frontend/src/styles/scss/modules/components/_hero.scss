@@ -25,4 +25,30 @@
     background-image: linear-gradient(transparent, var(--primary-theme-color));
     pointer-events: none;
   }
+
+  &__title {
+    position: relative;
+    color: var(--dark-primary-text-color);
+    font-weight: 900;
+    font-size: 2.25rem;
+    margin: 0;
+
+    @include desktop {
+      font-size: 2.5rem;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -0.5rem;
+      width: 5rem;
+      height: 0.25rem;
+      background-color: var(--secondary-highlight-color);
+
+      @include desktop {
+        width: 7rem;
+      }
+    }
+  }
 }

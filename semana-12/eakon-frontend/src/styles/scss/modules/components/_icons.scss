@@ -25,7 +25,7 @@
     position: absolute;
     top: var(--padding-nav);
     right: var(--container-padding);
-    transition: top 0.25s;
+    transition: filter 0.25s, color 0.25s, top 0.25s;
   }
 
   &--close,
