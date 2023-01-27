@@ -1,4 +1,4 @@
-const HeroInformation = ({ subtitle, text, image }) => {
+const HeroInformation = ({ subtitle, text, image, imageClasses = '' }) => {
   return (
     <section className="section">
       <div className="container d-flex f-direction-column gap-sm">
@@ -7,11 +7,10 @@ const HeroInformation = ({ subtitle, text, image }) => {
         <img
           src={image}
           alt="Nosotros"
-          className="section__img section__img--lg mx-auto"
-        />
+          className={`section__img section__img--lg mx-auto ${imageClasses}`} />
       </div>
     </section>
   );
-};
+}
 
 export default HeroInformation;

@@ -13,6 +13,7 @@ const AboutUsHero = ({ aboutUsData }) => {
         subtitle={attributes?.nombre_empresa}
         text={attributes?.quien}
         image={attributes?.logo.data.attributes.url}
+        imageClasses={"card card--informative"}
       />
     </>
   );

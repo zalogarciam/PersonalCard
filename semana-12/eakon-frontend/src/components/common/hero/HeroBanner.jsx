@@ -1,4 +1,5 @@
 import logoEAKON from "../../../assets/img/logo-eakon.webp";
+
 const HeroBanner = ({ image, title }) => {
   return (
     <section
@@ -8,9 +9,7 @@ const HeroBanner = ({ image, title }) => {
       }}
     >
       <div className="container">
-        <h1 className="section__title section__title--lg color-dark-primary">
-          {title}
-        </h1>
+        <h1 className="hero__title">{title}</h1>
       </div>
     </section>
   );
