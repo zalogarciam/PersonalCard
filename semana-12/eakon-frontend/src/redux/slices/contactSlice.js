@@ -17,12 +17,12 @@ export const contactSlice = createSlice({
     builder.addCase(fetchReadContactData.fulfilled, (state, action) => {
       state.loading = false;
       state.error = {};
-      state.aboutUsData = action.payload.data;
+      state.contactData = action.payload.data;
     });
     builder.addCase(fetchReadContactData.rejected, (state, action) => {
       state.loading = false;
       state.error = action.payload;
-      state.aboutUsData = {};
+      state.contactData = {};
     });
   }
 });
