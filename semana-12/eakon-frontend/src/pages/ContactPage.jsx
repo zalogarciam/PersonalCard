@@ -19,7 +19,7 @@ const ContactPage = () => {
     <>
       {loading && <LoadersModal />}
       <ContactHero contactData={contactData} />
-      <ContactMeans contactData={contactData}></ContactMeans>
+      <ContactMeans />
     </>
   );
 };

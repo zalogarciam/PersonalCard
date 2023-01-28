@@ -1,16 +1,22 @@
 import { useEffect, useRef, useState } from 'react';
 import { BsCart, BsList, BsXCircle } from "react-icons/bs";
+import { useDispatch } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 import logoEAKON from '../../assets/img/logo-eakon.webp';
+import useContact from '../../hooks/useContact';
+import { fetchReadContactData } from '../../redux/thunks/contactThunk';
 import ContainersImage from '../common/containers/ContainersImage';
 import ListsNavLink from '../common/lists/ListsNavLink';
 
 const Header = () => {
   const location = useLocation();
+  const dispatch = useDispatch();
 
   const header = useRef();
   const nav = useRef();
   const mobileModal = useRef();
+
+  const { contactData } = useContact();
 
   const [theme, setTheme] = useState(localStorage.getItem('theme') ?? '');
 
@@ -47,8 +53,11 @@ const Header = () => {
       header.current?.classList.remove('header--scroll');
       nav.current?.classList.remove('nav--scroll');
     }
-    console.log(location);
   }, [location.pathname]);
+
+  useEffect(() => {
+    Object.keys(contactData).length === 0 && dispatch(fetchReadContactData());
+  }, []);
 
   return (
     <header
