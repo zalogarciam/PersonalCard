@@ -2,6 +2,11 @@
   box-shadow: 0 0 0.0625rem 0.0625rem var(--primary-shadow-color);
   margin-top: auto;
 
+  &--shopping-cart {
+    box-shadow: none;
+    border-top: 0.125rem solid var(--dark-primary-shadow-color);
+  }
+
   &__title {
     position: relative;
     color: var(--primary-highlight-color);

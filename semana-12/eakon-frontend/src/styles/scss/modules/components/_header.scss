@@ -1,10 +1,20 @@
 .header {
+  --translate-header: 0;
   position: fixed;
   z-index: 25;
   top: 0;
   left: 0;
   width: 100%;
   transition: left 0.25s, background-color 0.25s, box-shadow 0.25s;
+  left: var(--translate-header);
+
+  @include desktop {
+    left: 0;
+  }
+
+  & .icon {
+    color: var(--dark-primary-text-color);
+  }
 
   & .list__link {
     color: var(--dark-primary-text-color);
@@ -15,16 +25,24 @@
     }
   }
 
-  &--menu {
-    left: -50%;
+  &--move-left {
+    --translate-header: -50%;
+  }
+
+  &--move-right {
+    --translate-header: 50%;
   }
 
   &--scroll {
     background-color: var(--primary-theme-color);
     box-shadow: 0 0 0.0625rem 0.0625rem var(--primary-shadow-color);
 
-    & .icon--menu {
+    & .icon {
       color: var(--primary-text-color);
+    }
+
+    & .icon--close {
+      color: var(--dark-primary-text-color);
     }
 
     & .list__link {
@@ -37,9 +55,5 @@
         }
       }
     }
-  }
-
-  @include desktop {
-    left: 0;
   }
 }

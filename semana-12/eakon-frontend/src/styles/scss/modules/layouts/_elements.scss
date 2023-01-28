@@ -41,7 +41,7 @@
     }
   }
 
-  &--gallery {
+  &--products-gallery {
     grid-template-columns: repeat(auto-fit, min(224px, 100%));
     justify-content: center;
   }

@@ -30,8 +30,6 @@
 
   &--close,
   &--menu {
-    color: var(--dark-primary-text-color);
-
     @include desktop {
       display: none;
     }

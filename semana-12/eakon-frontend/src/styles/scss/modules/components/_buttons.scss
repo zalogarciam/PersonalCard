@@ -1,4 +1,5 @@
 .button {
+  display: inline-block;
   background-color: var(--primary-theme-color);
   border: 0.0625rem solid var(--primary-theme-color);
   border-radius: var(--primary-border-radius);
@@ -27,6 +28,26 @@
     @include desktop {
       font-size: 1rem;
     }
+  }
+
+  &--circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    box-sizing: border-box;
+    padding: 0;
+  }
+
+  &--products {
+    position: absolute;
+    z-index: 1;
+    top: 1rem;
+    right: 1rem;
+    opacity: 0;
+    transition: background-color 0.25s, border 0.25s, color 0.25s, box-shadow 0.25s, filter 0.25s, opacity 0.25s;
   }
 
   &--primary {

@@ -1,5 +1,6 @@
 .modal {
   position: fixed;
+  z-index: 50;
   top: 0;
   right: 0;
   bottom: 0;
@@ -16,9 +17,10 @@
     --translate-modal: 0;
   }
 
-  &--header {
+  &--mobile {
     @include desktop {
       position: static;
+      z-index: auto;
       background-image: none;
       opacity: 1;
       pointer-events: auto;

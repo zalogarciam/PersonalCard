@@ -1,5 +1,6 @@
 .card {
   &--products {
+    position: relative;
     box-shadow: 0 0 0.25rem 0 var(--primary-shadow-color);
     border-radius: var(--primary-border-radius);
     overflow: hidden;
@@ -7,6 +8,10 @@
 
     &:hover {
       box-shadow: 0 0 0.5rem 0 var(--primary-highlight-color);
+
+      & .button--products {
+        opacity: 1;
+      }
     }
   }
 
@@ -51,6 +56,16 @@
       }
     }
 
+    &--shopping-cart {
+      border-radius: var(--primary-border-radius) 0 0 var(--primary-border-radius);
+      overflow: hidden;
+      height: 120px;
+
+      @include desktop {
+        height: 160px;
+      }
+    }
+
     &--zigzag {
       border-radius: var(--primary-border-radius);
       height: 256px;
@@ -67,14 +82,20 @@
     &--products {
       background-color: var(--secondary-theme-color);
       height: 180px;
-      padding: calc(var(--section-padding) * 0.5);
       box-sizing: border-box;
+      padding: calc(var(--section-padding) * 0.5);
       transition: background-color 0.25s;
 
       @include desktop {
         height: 220px;
       }
     }
+
+    &--shopping-cart {
+      height: auto;
+      border-radius: 0 var(--primary-border-radius) var(--primary-border-radius) 0;
+    }
+
   }
 
   &__title {
