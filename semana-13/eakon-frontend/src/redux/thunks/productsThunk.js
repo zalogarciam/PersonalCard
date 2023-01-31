@@ -3,7 +3,7 @@ import axiosInstance from "../../configs/axiosInstance";
 
 export const fetchReadProducts = createAsyncThunk(
   "products/fetchReadProducts",
-  async ({ productsPage = 1, productsPageSize = 9 }, { rejectWithValue }) => {
+  async ({ productsPage, productsPageSize }, { rejectWithValue }) => {
     try {
       const options = {
         method: "GET",
