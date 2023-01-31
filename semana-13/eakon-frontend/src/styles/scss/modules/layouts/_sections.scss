@@ -2,9 +2,11 @@
   padding-top: var(--section-padding);
   padding-bottom: var(--section-padding);
 
-  &:first-child,
-  &:last-child {
+  &:first-child {
     padding-top: calc(var(--section-padding) * 2.5);
+  }
+
+  &:last-child {
     padding-bottom: calc(var(--section-padding) * 2.5);
   }
 
@@ -19,9 +21,11 @@
     transition: padding 0.25s, transform 0.25s;
     transform: translateX(var(--translate-modal));
 
-    &:first-child,
-    &:last-child {
+    &:first-child {
       padding-top: 0;
+    }
+
+    &:last-child {
       padding-bottom: 0;
     }
   }

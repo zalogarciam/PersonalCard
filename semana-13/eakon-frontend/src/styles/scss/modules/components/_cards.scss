@@ -1,4 +1,11 @@
 .card {
+  position: relative;
+
+  &--hero {
+    z-index: 5;
+    max-width: 512px;
+  }
+
   &--products {
     position: relative;
     box-shadow: 0 0 0.25rem 0 var(--primary-shadow-color);
@@ -79,23 +86,28 @@
   &__body {
     @include flexbox(column, stretch, flex-start, calc(var(--section-padding) * 0.25));
 
+    &--hero {
+      align-items: flex-start;
+      gap: calc(var(--section-padding) * 0.375);
+    }
+
     &--products {
       background-color: var(--secondary-theme-color);
-      height: 180px;
+      height: 200px;
       box-sizing: border-box;
       padding: calc(var(--section-padding) * 0.5);
       transition: background-color 0.25s;
 
       @include desktop {
-        height: 220px;
+        height: 240px;
       }
     }
 
     &--shopping-cart {
+      gap: calc(var(--section-padding) * 0.125);
       height: auto;
       border-radius: 0 var(--primary-border-radius) var(--primary-border-radius) 0;
     }
-
   }
 
   &__title {
@@ -131,6 +143,14 @@
 
       @include desktop {
         font-size: 1.625rem;
+      }
+    }
+
+    &--2xl {
+      font-size: 1.75rem;
+
+      @include desktop {
+        font-size: 1.875rem;
       }
     }
   }
