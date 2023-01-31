@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import ProductsGallery from "../components/products/gallery/ProductsGallery";
 // import { useDispatch } from "react-redux";
 import ProductsWrapper from "../components/products/ProductsWrapper";
 import useProducts from "../hooks/useProducts";
@@ -18,11 +19,7 @@ const ProductsPage = () => {
 
   return (
     <ProductsWrapper loading={loading} title="Producto">
-      <ul>
-        {products.map((element) => (
-          <li key={element.id}>{element.attributes.nombre}</li>
-        ))}
-      </ul>
+      <ProductsGallery products={products} />
     </ProductsWrapper>
   );
 };
