@@ -53,6 +53,34 @@ const ProductDetail = () => {
             </a>
           </div>
         </div>
+        <div className="d-flex f-direction-column gap-sm">
+          <h3 className="section__title section__title--sm">
+            Especificaciones
+          </h3>
+          <table>
+            {attributes?.especificaciones.map((element) => {
+              const { id, nombre, contenido } = element;
+              return (
+                <tr key={id}>
+                  <td>{nombre}</td>
+                  <td>{contenido}</td>
+                </tr>
+              );
+            })}
+          </table>
+        </div>
+        <div className="d-flex f-direction-column gap-sm">
+          <h3 className="section__title section__title--sm">Ficha técnica</h3>
+          <a
+            href={attributes?.ficha_tecnica_url}
+            className="button button--secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+            download
+          >
+            Descargar
+          </a>
+        </div>
       </div>
     </article>
   );
