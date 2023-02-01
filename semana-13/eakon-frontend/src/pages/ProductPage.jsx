@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import ProductDetail from "../components/product/ProductDetail";
 import { fetchReadProduct } from "../redux/thunks/productsThunk";
 
 const ProductPage = () => {
@@ -11,13 +12,7 @@ const ProductPage = () => {
     dispatch(fetchReadProduct(slug));
   }, []);
 
-  return (
-    <section className="section">
-      <div className="container">
-        <h1>{slug}</h1>
-      </div>
-    </section>
-  );
+  return <ProductDetail />;
 };
 
 export default ProductPage;
