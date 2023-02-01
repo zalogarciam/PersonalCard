@@ -5,8 +5,6 @@ const ListsNavLink = ({
   handleClickList = () => {},
   handleClickNavLink = () => {},
 }) => {
-  console.log(className);
-
   return (
     <ul className={`list ${className}`} onClick={handleClickList}>
       <li>
@@ -20,17 +18,15 @@ const ListsNavLink = ({
           Productos
         </NavLink>
       </li>
-      <li>
+      {/* <li>
         <NavLink
           to="/servicios"
-          className={({ isActive }) =>
-            isActive ? "list__link list__link--active" : "list__link"
-          }
+          className={({ isActive }) => isActive ? "list__link list__link--active" : "list__link"}
           onClick={handleClickNavLink}
         >
           Servicios
         </NavLink>
-      </li>
+      </li> */}
       <li>
         <NavLink
           to="/nosotros"

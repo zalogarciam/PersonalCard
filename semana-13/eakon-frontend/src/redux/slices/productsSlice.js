@@ -15,6 +15,15 @@ export const productsSlice = createSlice({
   name: 'products',
   initialState,
   reducers: {
+    resetProducts: (state) => {
+      state.loading = false;
+      state.error = {};
+      state.products = [];
+      state.productsMeta = {};
+      state.productsPage = 1;
+      state.productsPageSize = 8;
+      state.product = {};
+    },
     incrementProductsPage: (state) => {
       state.productsPage++;
     }
@@ -54,6 +63,6 @@ export const productsSlice = createSlice({
   }
 });
 
-export const { incrementProductsPage } = productsSlice.actions;
+export const { resetProducts, incrementProductsPage } = productsSlice.actions;
 
 export default productsSlice.reducer;

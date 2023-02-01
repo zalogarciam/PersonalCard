@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { BsCart, BsList, BsXCircle } from "react-icons/bs";
+import { BsList, BsXCircle } from "react-icons/bs";
 import { useDispatch } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 import logoEAKON from '../../assets/img/logo-eakon.webp';
@@ -99,11 +99,11 @@ const Header = () => {
               <option value="dark">🌚</option>
               <option value="light">🌞</option>
             </select>
-            <button
+            {/* <button
               className="icon icon--sm"
             >
               <BsCart />
-            </button>
+            </button> */}
             <button
               className="icon icon--menu"
               onClick={handleClickShowMenu}
