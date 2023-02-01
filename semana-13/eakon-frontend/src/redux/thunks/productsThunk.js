@@ -16,3 +16,19 @@ export const fetchReadProducts = createAsyncThunk(
     }
   }
 );
+
+export const fetchReadProduct = createAsyncThunk(
+  "products/fetchReadProduct",
+  async (slug, { rejectWithValue }) => {
+    try {
+      const options = {
+        method: "GET",
+        url: `/productos?filters[slug][$eq]=${slug}&populate=subcategoria,especificaciones,marca,imagen,ficha_tecnica`,
+      };
+      const { data } = await axiosInstance(options);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchReadProducts } from "../thunks/productsThunk";
+import { fetchReadProduct, fetchReadProducts } from "../thunks/productsThunk";
 
 const initialState = {
   loading: false,
@@ -8,15 +8,16 @@ const initialState = {
   productsMeta: {},
   productsPage: 1,
   productsPageSize: 8,
+  product: {},
 };
 
 export const productsSlice = createSlice({
-  name: "products",
+  name: 'products',
   initialState,
   reducers: {
     incrementProductsPage: (state) => {
       state.productsPage++;
-    },
+    }
   },
   extraReducers: (builder) => {
     builder.addCase(fetchReadProducts.pending, (state) => {
@@ -37,7 +38,20 @@ export const productsSlice = createSlice({
       state.error = action.payload;
       state.products = [];
     });
-  },
+    builder.addCase(fetchReadProduct.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(fetchReadProduct.fulfilled, (state, action) => {
+      state.loading = false;
+      state.error = {};
+      state.product = action.payload.data[0];
+    });
+    builder.addCase(fetchReadProduct.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+      state.products = {};
+    });
+  }
 });
 
 export const { incrementProductsPage } = productsSlice.actions;
