@@ -5,13 +5,19 @@ const initialState = {
   loading: false,
   error: {},
   products: [],
+  productsMeta: {},
   productsPage: 1,
-  productsPageSize: 9
+  productsPageSize: 8,
 };
 
-export const aboutUsSlice = createSlice({
-  name: 'products',
+export const productsSlice = createSlice({
+  name: "products",
   initialState,
+  reducers: {
+    incrementProductsPage: (state) => {
+      state.productsPage++;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchReadProducts.pending, (state) => {
       state.loading = true;
@@ -19,14 +25,21 @@ export const aboutUsSlice = createSlice({
     builder.addCase(fetchReadProducts.fulfilled, (state, action) => {
       state.loading = false;
       state.error = {};
-      state.products = action.payload.data;
+      if (action.payload.meta.pagination.page === 1) {
+        state.products = action.payload.data;
+      } else {
+        state.products = [...state.products, ...action.payload.data];
+      }
+      state.productsMeta = action.payload.meta;
     });
     builder.addCase(fetchReadProducts.rejected, (state, action) => {
       state.loading = false;
       state.error = action.payload;
       state.products = [];
     });
-  }
+  },
 });
 
-export default aboutUsSlice.reducer;
+export const { incrementProductsPage } = productsSlice.actions;
+
+export default productsSlice.reducer;

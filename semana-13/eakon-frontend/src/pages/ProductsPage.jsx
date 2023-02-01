@@ -10,15 +10,15 @@ const ProductsPage = () => {
   const { loading, products, productsPage, productsPageSize } = useProducts();
 
   useEffect(() => {
-    document.title = '¡Productos! I EAKON';
-    dispatch(fetchReadProducts({ productsPage, productsPageSize }));
+    document.title = "¡Productos! I EAKON";
   }, []);
 
+  useEffect(() => {
+    dispatch(fetchReadProducts({ productsPage, productsPageSize }));
+  }, [productsPage]);
+
   return (
-    <ProductsWrapper
-      loading={loading}
-      title="Producto"
-    >
+    <ProductsWrapper loading={loading} title="Producto">
       <ProductsGallery products={products} />
     </ProductsWrapper>
   );
