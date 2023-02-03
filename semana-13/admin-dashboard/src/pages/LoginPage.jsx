@@ -1,55 +1,57 @@
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { useState } from "react";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase/firebase";
 
-const LoginPage = () => {
-  const [loginForm, setLoginForm] = useState({
-    email: "",
-    password: "",
-  });
+export const AuthContext = createContext();
 
-  const { email, password } = loginForm;
+export const AuthProvider = ({ children }) => {
+  const navigate = useNavigate();
 
-  const handleChangeLoginForm = (e) => {
-    setLoginForm({
-      ...loginForm,
-      [e.target.name]: e.target.value,
-    });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState({});
+  const [user, setUser] = useState({});
+
+  const createUser = async (email, password) => {
+    try {
+      setLoading(true);
+      const response = await createUserWithEmailAndPassword(auth, email, password);
+      setUser(response);
+      setError({});
+      navigate('/login');
+    } catch (error) {
+      setError(error);
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const handleSubmitReadUser = async (e) => {
-    e.preventDefault();
-    const response = await signInWithEmailAndPassword(auth, email, password);
-    console.log(response);
+  const readUser = async (email, password) => {
+    try {
+      setLoading(true);
+      const response = await signInWithEmailAndPassword(auth, email, password);
+      setUser(response);
+      setError({});
+      navigate('/');
+    } catch (error) {
+      setError(error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <>
-      <h1>LoginPage</h1>
-      <form onSubmit={handleSubmitReadUser}>
-        <input
-          type="email"
-          name="email"
-          placeholder="Correo"
-          value={email}
-          onChange={handleChangeLoginForm}
-        />
-        <br />
-        <br />
-        <input
-          type="password"
-          name="password"
-          placeholder="Contraseña"
-          value={password}
-          onChange={handleChangeLoginForm}
-        />
-        <br />
-        <br />
-        <input type="submit" value="Iniciar sesión" />
-      </form>
-      <br />
-    </>
+    <AuthContext.Provider
+      value={{
+        loading,
+        error,
+        user,
+        setUser,
+        createUser,
+        readUser
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
   );
 };
-
-export default LoginPage;
