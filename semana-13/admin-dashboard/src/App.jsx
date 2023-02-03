@@ -1,13 +1,13 @@
-import { RouterProvider } from 'react-router-dom';
-import './App.css';
-import { UserProvider } from './context/UserContext';
-import { primaryRoutes } from './routes/PrimaryRoutes';
+import { RouterProvider } from "react-router-dom";
+import "./App.css";
+import { AuthProvider } from "./context/AuthContext";
+import { primaryRoutes } from "./routes/PrimaryRoutes";
 
 function App() {
   return (
-    <UserProvider>
+    <AuthProvider>
       <RouterProvider router={primaryRoutes} />
-    </UserProvider>
+    </AuthProvider>
   );
 }
 

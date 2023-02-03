@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import useUser from "../hooks/useUser";
+import useUser from "../hooks/useAuth";
 
 const AuthValidation = () => {
 
