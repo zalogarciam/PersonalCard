@@ -2,7 +2,7 @@ import { useState } from "react";
 import useAuth from "../hooks/useAuth";
 
 const RegisterPage = () => {
-  const { createUser } = useAuth();
+  const { loading, createUser } = useAuth();
 
   const [registrationForm, setRegistrationForm] = useState({
     email: "",
@@ -47,6 +47,8 @@ const RegisterPage = () => {
         <br />
         <input type="submit" value="Registrar" />
       </form>
+      <br />
+      {loading && <span>Cargando...</span>}
     </>
   );
 };
