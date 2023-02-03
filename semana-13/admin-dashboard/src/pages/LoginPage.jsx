@@ -1,57 +1,73 @@
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import { createContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { auth } from "../firebase/firebase";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
-export const AuthContext = createContext();
-
-export const AuthProvider = ({ children }) => {
+const LoginPage = () => {
   const navigate = useNavigate();
+  const { loading, error, user, readUser } = useAuth();
 
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState({});
-  const [user, setUser] = useState({});
+  const [loginForm, setLoginForm] = useState({
+    email: '',
+    password: ''
+  });
 
-  const createUser = async (email, password) => {
-    try {
-      setLoading(true);
-      const response = await createUserWithEmailAndPassword(auth, email, password);
-      setUser(response);
-      setError({});
-      navigate('/login');
-    } catch (error) {
-      setError(error);
-    } finally {
-      setLoading(false);
-    }
+  const { email, password } = loginForm;
+
+  const handleChangeLoginForm = (e) => {
+    setLoginForm({
+      ...loginForm,
+      [e.target.name]: e.target.value
+    });
   };
 
-  const readUser = async (email, password) => {
-    try {
-      setLoading(true);
-      const response = await signInWithEmailAndPassword(auth, email, password);
-      setUser(response);
-      setError({});
+  const handleSubmitReadUser = async (e) => {
+    e.preventDefault();
+    await readUser(email, password);
+  };
+
+  useEffect(() => {
+    console.log(user);
+    if (Object.keys(user).length) {
       navigate('/');
-    } catch (error) {
-      setError(error);
-    } finally {
-      setLoading(false);
     }
-  };
+  }, [user]);
 
   return (
-    <AuthContext.Provider
-      value={{
-        loading,
-        error,
-        user,
-        setUser,
-        createUser,
-        readUser
-      }}
-    >
-      {children}
-    </AuthContext.Provider>
+    <>
+      <h1>LoginPage</h1>
+      <form
+        onSubmit={handleSubmitReadUser}
+      >
+        <input
+          type="email"
+          name="email"
+          placeholder="Correo"
+          value={email}
+          onChange={handleChangeLoginForm}
+        />
+        <br />
+        <br />
+        <input
+          type="password"
+          name="password"
+          placeholder="Contraseña"
+          value={password}
+          onChange={handleChangeLoginForm}
+        />
+        <br />
+        <br />
+        <input type="submit" value="Iniciar sesión" />
+      </form>
+      <br />
+      <Link to="/register">Crear cuenta</Link>
+      <br />
+      <br />
+      {loading && <span>Cargando...</span>}
+      <br />
+      <br />
+      {error && <span>{error.code}</span>}
+    </>
   );
 };
+
+export default LoginPage;

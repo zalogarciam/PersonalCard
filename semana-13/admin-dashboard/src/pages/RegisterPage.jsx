@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
 const RegisterPage = () => {
-  const { loading, error, createUser } = useAuth();
+
+  const navigate = useNavigate();
+
+  const { loading, error, user, createUser } = useAuth();
 
   const [registrationForm, setRegistrationForm] = useState({
-    email: "",
-    password: "",
+    email: '',
+    password: ''
   });
 
   const { email, password } = registrationForm;
@@ -14,7 +18,7 @@ const RegisterPage = () => {
   const handleChangeRegistrationForm = (e) => {
     setRegistrationForm({
       ...registrationForm,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
   };
 
@@ -23,10 +27,19 @@ const RegisterPage = () => {
     await createUser(email, password);
   };
 
+  useEffect(() => {
+    console.log(user);
+    if (Object.keys(user).length) {
+      navigate('/');
+    }
+  }, [user]);
+
   return (
     <>
       <h1>RegisterPage</h1>
-      <form onSubmit={handleSubmitCreateUser}>
+      <form
+        onSubmit={handleSubmitCreateUser}
+      >
         <input
           type="email"
           name="email"
@@ -48,6 +61,7 @@ const RegisterPage = () => {
         <input type="submit" value="Registrar" />
       </form>
       <br />
+      <Link to="/login">Iniciar sesión</Link>
       {loading && <span>Cargando...</span>}
       {error && <span>{error.code}</span>}
     </>

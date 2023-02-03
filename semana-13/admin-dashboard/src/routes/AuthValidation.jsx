@@ -1,19 +1,18 @@
 import { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import useUser from "../hooks/useAuth";
+import useAuth from "../hooks/useAuth";
 
 const AuthValidation = () => {
-
   const navigate = useNavigate();
-  const { user } = useUser();
+  const { user } = useAuth();
 
   useEffect(() => {
-    if (user === false) {
-      navigate('/login');
+    if (Object.keys(user).length <= 0) {
+      navigate("/login");
     }
   }, [user]);
 
-  return (<Outlet />);
-}
+  return <Outlet />;
+};
 
 export default AuthValidation;
