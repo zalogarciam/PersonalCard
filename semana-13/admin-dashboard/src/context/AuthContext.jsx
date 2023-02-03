@@ -7,14 +7,16 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState({});
-  const [user, setUser] = useState(false);
+  const [user, setUser] = useState({});
 
   const createUser = async (email, password) => {
     try {
       setLoading(true);
       const response = await createUserWithEmailAndPassword(auth, email, password);
+      setUser(response);
       console.log(response);
     } catch (error) {
+      setError(error);
       console.log(error);
     } finally {
       setLoading(false);
