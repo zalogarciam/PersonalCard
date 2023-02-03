@@ -1,6 +1,9 @@
 import { useState } from "react";
+import useAuth from "../hooks/useAuth";
 
 const RegisterPage = () => {
+  const { createUser } = useAuth();
+
   const [registrationForm, setRegistrationForm] = useState({
     email: "",
     password: "",
@@ -15,8 +18,9 @@ const RegisterPage = () => {
     });
   };
 
-  const handleSubmitCreateUser = (e) => {
+  const handleSubmitCreateUser = async (e) => {
     e.preventDefault();
+    await createUser(email, password);
   };
 
   return (
