@@ -4,11 +4,7 @@ import { AuthProvider } from "./context/AuthContext";
 import { primaryRoutes } from "./routes/PrimaryRoutes";
 
 function App() {
-  return (
-    <AuthProvider>
-      <RouterProvider router={primaryRoutes} />
-    </AuthProvider>
-  );
+  return <RouterProvider router={primaryRoutes} />;
 }
 
 export default App;
